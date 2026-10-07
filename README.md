@@ -50,6 +50,8 @@ High Usage and Invalid servers are considered to require attention.
 - GNU g++ Compiler
 - Git
 - GitHub
+- Python
+- Pytest
 
 ## Compile
 
@@ -62,7 +64,25 @@ g++ -Wall -Wextra data_center_monitor.cpp -o DCM
 ```bash
 ./DCM
 ```
+## Automated Testing
 
+Automated tests are implemented with Python and Pytest to validate the C++ application.
+
+The test suite:
+- Executes the compiled C++ application using Python `subprocess`
+- Automatically supplies server input to the application
+- Captures the C++ program output
+- Compares actual output with expected results using assertions
+- Uses Pytest parameterization to test multiple scenarios with one test function
+- Tests Healthy, Moderate, High Usage, and Invalid server conditions
+- Includes boundary and invalid-input test cases
+- Verifies whether a server requires attention
+
+### Run Tests
+
+```bash
+python3 -m pytest test_dcm.py
+```
 ## Example Output
 
 ```text
@@ -96,7 +116,14 @@ Attention Required: 2
 
 ## Learning Outcome
 
-This project helped me apply C++ fundamentals and object-oriented programming concepts to a practical server-monitoring scenario. It strengthened my understanding of classes, objects, encapsulation, constructors, methods, vectors, validation, loops, and Linux-based C++ development.
+This project helped me apply C++ fundamentals and object-oriented 
+programming concepts to a practical server-monitoring scenario. It 
+strengthened my understanding of classes, objects, encapsulation, 
+constructors, methods,vectors, validation, loops, and Linux-based C++ 
+development.
+I also extended the project with Python and Pytest automated testing, using
+subprocess execution, parameterized test cases, captured program output,
+assertions, and boundary testing to validate the C++ application.
 
 ## Author
 
