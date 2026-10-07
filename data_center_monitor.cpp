@@ -102,9 +102,8 @@ int main()
 		cout<<"\n\t_________________________________________"<<endl;
 		for(size_t j = 0; j < servers.size(); j++)
 		{
-			servers[j].displayInfo();		}
-
-
+			servers[j].displayInfo();
+		}
                 for(size_t k = 0; k<servers.size();k++)
 		{
 			if(servers[k].status() == "Healthy")
